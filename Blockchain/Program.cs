@@ -17,9 +17,9 @@ namespace blockchain
 	{
 		static void Main(string[] args)
 		{
-			List<Note> notes = new List<Note>();
+			List<Node> notes = new List<Node>();
 
-			notes.Add(new Note("Первый блок"));
+			notes.Add(new Node("Первый блок"));
 
 			string command = "";
 			
@@ -81,7 +81,7 @@ namespace blockchain
 			}
 		}
 
-		static void ValidateNotes(List<Note> notes)
+		static void ValidateNotes(List<Node> notes)
 		{
 			for(int i = 0; i < notes.Count; i++)
 			{
@@ -105,7 +105,7 @@ namespace blockchain
 
 			Console.WriteLine("\n");
 		}
-        static int ChangeNotes(List<Note> notes)
+        static int ChangeNotes(List<Node> notes)
 		{
 			int n = -1;
 			Random rnd = new Random();
@@ -118,12 +118,12 @@ namespace blockchain
 		}
 
 
-        static void AddNote(string text, List<Note> notes)
+        static void AddNote(string text, List<Node> notes)
 		{
-			notes.Add(new Note(text, notes[notes.Count - 1].Hash));
+			notes.Add(new Node(text, notes[notes.Count - 1].Hash));
 		}
 
-		static void WriteAllNotes(List<Note> notes)
+		static void WriteAllNotes(List<Node> notes)
 		{
 			Console.WriteLine("Ваши блоки: ");
 
@@ -135,7 +135,7 @@ namespace blockchain
             }
 		}
 
-		static void WriteFullNotes(List<Note> notes)
+		static void WriteFullNotes(List<Node> notes)
 		{
 			Console.WriteLine("Ваши блоки: ");
 
@@ -148,12 +148,12 @@ namespace blockchain
 
 		}
 
-		static void WriteNote(Note n)
+		static void WriteNote(Node n)
 		{
             Console.WriteLine($"Текст: {n.Text}");
         }
 
-		static void WriteNoteFull(Note n)
+		static void WriteNoteFull(Node n)
 		{
 			Console.WriteLine($"Хеш предыдущего блока:");
             Console.WriteLine(n.PreviousHashString);

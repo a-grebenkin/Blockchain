@@ -4,7 +4,7 @@ using System.Security.Cryptography;
 
 namespace blockchain
 {
-	class Note
+	class Node
 	{
 		private string text;
 		private byte[] prev_hash;
@@ -16,7 +16,7 @@ namespace blockchain
 		{
 			prev_hash[0] += 1;
 		}
-        public Note(string text, byte[] hash = null)
+        public Node(string text, byte[] hash = null)
 		{
 			this.text = text;
 			this.prev_hash = hash;
